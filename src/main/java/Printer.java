@@ -12,10 +12,11 @@ public class Printer {
     }
 
     public void print(int pages, int copies) {
-        if (this.paperLeft >= (pages * copies) && this.tonerVolume >= (pages * copies))
+        int pagesToPrint = pages * copies;
+        if (this.paperLeft >= pagesToPrint && this.tonerVolume >= pagesToPrint)
         {
-            this.paperLeft -= (pages * copies);
-            this.tonerVolume -= (pages * copies);
+            this.paperLeft -= pagesToPrint;
+            this.tonerVolume -= pagesToPrint;
         }
     }
 
